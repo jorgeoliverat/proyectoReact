@@ -1,7 +1,13 @@
+import React from "react"
+import { ItemCount } from "../ItemCount/ItemCount"
 
 const ItemListContainer = ( { greeting = 'saludo'} ) => {
+    
     return (
-    <div>{greeting}</div>
+    <>
+        {greeting}
+        <ItemCount stock = {5} inicial = {1}/>
+    </>
     )
 }
 
