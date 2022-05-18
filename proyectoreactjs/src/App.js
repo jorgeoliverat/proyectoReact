@@ -4,6 +4,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 // import { useState } from 'react';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -14,12 +16,20 @@ function App() {
 //   }
 
   return (
+    <BrowserRouter>
     <div className='App'>
     <NavBar/>
-    <ItemListContainer greeting = {'Boton contador'} />
+    <Routes>
+        <Route path='/' element = { <ItemListContainer greeting = {'Vinilos'} /> } />
+        <Route path='/categoria/:id' element = { <ItemListContainer greeting = {'Boton contador 2'} /> } />
+        <Route path='/detalle/:detalleId' element = { <ItemDetailContainer/> } />
+
+        <Route path="/*" element = { <Navigate to='/' replace  /> } />
     {/* {count} */}
     {/* <button onClick={contador} >Click +</button> */}
+    </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
