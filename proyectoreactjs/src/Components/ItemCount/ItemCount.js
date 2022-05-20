@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import '../styles/ItemCount.css'
 
-export const ItemCount = ({stock, inicial}) => {
+export const ItemCount = ({stock, inicial, onAdd}) => {
     const [cuantity, setCuantity] = useState (inicial);
 
-    const onAdd = () => {console.log(cuantity)}
+    // const onAdd = () => {console.log(cuantity)}
     const resta = () => {
         if (cuantity > 1) {
             setCuantity (cuantity - 1);
@@ -16,17 +16,18 @@ export const ItemCount = ({stock, inicial}) => {
         }
     };
     return (
-        <section className="count">
-            <ul>
-            <button type="button" className="buttons" onClick={resta}>-</button>
-            {cuantity}
-            <button type="button" className="buttons" onClick={suma}>+</button>
-            </ul>
+        
+            <div>
 
-            <button type="submit" className="count__button" value={cuantity} onClick={onAdd}>
-                AGREGAR AL CARRITO
-            </button>
-        </section>
+                {cuantity} <br/>
+                <button type="button" className="btn btn-primary" onClick={resta}>-</button>
+                <button type="button" className="btn btn-primary" onClick={suma}>+</button>
+                <br/>
+                <button type="submit" className="btn btn-primary" onClick={() => onAdd(cuantity)}>
+                    AGREGAR AL CARRITO
+                </button>
+            
+            </div>
     );
 }
 

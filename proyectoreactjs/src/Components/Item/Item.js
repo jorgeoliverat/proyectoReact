@@ -8,14 +8,15 @@ const Item = ({prod}) => {
         <Link to = { `/detalle/${prod.id}`}>
             <div className="card w-100 mt-5" >
                 <div className="card-header">
-                    {`${prod.name} - ${prod.categoria}`}
+                    {`${prod.categoria} - ${prod.name}`}
                 </div>
                 <div className="card-body">
                     <img src={prod.foto} alt='' className='w-50' />
+                    <br/><br/>
                     {prod.price}                                                            
                 </div>
                 <div className="card-footer">  
-                        <button className="btn btn-outline-primary btn-block">
+                        <button className="btn btn-outline-dark btn-block">
                             detalle del producto
                         </button>
                 </div>

@@ -1,10 +1,13 @@
-
-import { FcFilmReel } from "react-icons/fc";
+import { Link } from "react-router-dom";
+import { GrCart } from "react-icons/gr";
+import '../styles/CartWidget.css'
 
 const CartWidget = () => {
     return (
         <> 
-            <h1><FcFilmReel /></h1>
+        <Link to='/Cart'>
+            <h2 className="logoNavBar" ><GrCart/></h2>
+        </Link>  
         </>
     )
 }
