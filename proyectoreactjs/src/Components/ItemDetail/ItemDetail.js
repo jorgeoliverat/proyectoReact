@@ -4,10 +4,6 @@ import '../styles/ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
 
-    function onAdd(cant) {
-        console.log(cant)
-    }
-
     return (
         <div className="row" >
         <div className="col">
@@ -19,9 +15,11 @@ const ItemDetail = ({producto}) => {
         <p>{producto.price}</p>
         <p className='fotoDescripcion'>{producto.descripcion}</p>
         <br/>
-        <ItemCount stock = {5} inicial = {1} onAdd={onAdd}  />
-        </div>    
+        <ItemCount stock = {5} inicial = {1}/>
+        </div> 
     </div>
+
+    
 
     )
 }

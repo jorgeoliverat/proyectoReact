@@ -6,17 +6,23 @@ import { getFetch } from '../../helpers/getFetch'
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState ({})
     const { detalleId } = useParams ()
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getFetch (detalleId)
         .then(respuesta=> setProducto(respuesta))
         .catch((err)=> console.log(err))
-        // .finally(()=>setLoading(false))     
+        .finally(()=>setLoading(false))     
     }, [])
 
     return (
         <div>
-            <ItemDetail producto = {producto} />
+            { loading ? 
+                    <h2>Cargando...</h2> 
+                    :     
+                    <ItemDetail producto = {producto} />           
+                }
+            
         </div>
     
     )

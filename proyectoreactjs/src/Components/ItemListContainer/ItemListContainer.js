@@ -1,5 +1,4 @@
 import React from "react"
-import { ItemCount } from "../ItemCount/ItemCount"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getFetch } from "../../helpers/getFetch"
