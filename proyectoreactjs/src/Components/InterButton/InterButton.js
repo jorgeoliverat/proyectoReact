@@ -5,7 +5,7 @@ const ButtonCount = ({handleInter})=> {
     return <button 
                 className="btn btn-primary" 
                 onClick={handleInter}
-                >Agregar Al carrito
+                >Ir al Cart
             </button>
 }
 

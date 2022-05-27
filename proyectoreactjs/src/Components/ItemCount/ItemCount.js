@@ -5,9 +5,7 @@ import '../styles/ItemCount.css'
 export const ItemCount = ({stock, inicial, onAdd}) => {
     const [cuantity, setCuantity] = useState (inicial);
 
-    function onAdd(cant) {
-        console.log(cant)
-    }
+
 
     const resta = () => {
         if (cuantity > 1) {
@@ -27,9 +25,9 @@ export const ItemCount = ({stock, inicial, onAdd}) => {
                 <button type="button" className="btn btn-primary" onClick={resta}>-</button>
                 <button type="button" className="btn btn-primary" onClick={suma}>+</button>
                 <br/>
-                {/* <button type="submit" className="btn btn-primary" onClick={() => onAdd(cuantity)}>
+                <button type="submit" className="btn btn-primary" onClick={() => onAdd(cuantity)}>
                     AGREGAR AL CARRITO
-                </button> */}
+                </button>
                 <InterButton/>            
             </div>
     );
