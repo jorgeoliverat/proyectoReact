@@ -31,6 +31,13 @@ const CartContextProvider = ({children}) =>{
         updateCart([]);
     }
 
+    function clearItem(id) {
+        let i = cartList.findIndex(el => el.id === id);
+        const newCartList = cartList;
+        newCartList.splice(i,1);
+        updateCart(newCartList);
+    }
+
     function updateCart(arr) {
         setCartList(arr);
         setTotalPrice(arr
@@ -48,6 +55,7 @@ const CartContextProvider = ({children}) =>{
             cartList,
             addToCart,
             clearCart,
+            clearItem,
             totalPrice,
             totalItems
         } } >
