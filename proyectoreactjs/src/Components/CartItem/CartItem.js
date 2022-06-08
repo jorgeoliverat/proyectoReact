@@ -10,10 +10,12 @@ export default function CartItem({item}) {
     }
     
     return (
-        <li>Item: {item.name} - Precio: S/{item.price} - Cantidad: {item.cant} 
-        <span onClick={removeItem}>
-            <i><BsBagXFill/></i>
-        </span>
+        <li>
+            <img className="fotoCartItem" src={item.foto} style={{width: 50}} alt = "producto"/>
+            Item: {item.name} - Precio: S/{item.price} - Cantidad: {item.cant} 
+            <span className="itemBag" onClick={removeItem}> 
+                <BsBagXFill/>
+            </span>
         </li>
     );
 }

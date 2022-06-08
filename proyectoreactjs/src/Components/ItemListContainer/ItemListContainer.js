@@ -7,39 +7,29 @@ import ItemList from "../ItemList/ItemList"
 
     const ItemListContainer = ( { greeting = 'saludo'} ) => {
     
-        const [productos, setProductos] = useState([])
-        const [loading, setLoading] = useState(true)
+    const [productos, setProductos] = useState([])
+    // const [producto, setProducto] = useState({})
+    const [loading, setLoading] = useState(true)
+    const { id } = useParams()      
+    
 
-        const {categoria} = useParams ();
-
-        useEffect(() => {
-            const db = getFirestore ()
-            const queryCollection = collection (db, 'items')
-
-            if (categoria) {
-            setLoading (true)
-            const queryCollectionFilter = query (queryCollection, where ("category", "==", categoria)
-                );
-                getDocs (queryCollectionFilter)
-                .then (resp => 
-                    setProductos (
-                        resp.docs.map (item => ({id: item.id, ...item.data ()}) ) 
-                        ) )
-                .catch((err)=> console.log(err))
-                .finally(()=>setLoading(false))
-            }
-            else {
-            getDocs (queryCollection)
-            .then (resp => 
-                setProductos (
-                    resp.docs.map (item => ({id: item.id, ...item.data ()}) ) 
-                    ) )
+    useEffect(() => {
+        const db = getFirestore()
+        if (id) {
+            const queryCollection = collection(db, 'items')
+            const queryCollectionFilter = query(queryCollection, where('categoria', '==', id))
+            getDocs(queryCollectionFilter)
+            .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ) )
             .catch((err)=> console.log(err))
-            .finally(()=>setLoading(false))
-            }   
-            }, [categoria]);
-
-
+            .finally(()=>setLoading(false))                             
+        } else {
+            const queryCollection = collection(db, 'items')
+            getDocs(queryCollection)
+            .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ) )
+            .catch((err)=> console.log(err))
+            .finally(()=>setLoading(false))                  
+        }
+    }, [id])
     
         // useEffect(() => {
         //     if (id) {
