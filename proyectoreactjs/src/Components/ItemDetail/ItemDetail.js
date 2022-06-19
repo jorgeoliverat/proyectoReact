@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useCartContext } from '../../context/CartContext'
-import InterButton from '../InterButton/InterButton'
+import InputCount from '../InputCount/InputCount'
 import { ItemCount } from '../ItemCount/ItemCount'
-import '../styles/ItemDetail.css'
+import '../ItemDetail/ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
     const [isItemCount, setIsItemCount] = useState(true)
@@ -18,24 +18,26 @@ const ItemDetail = ({producto}) => {
     console.log(cartList);
 
     return (
+        
+    <div className='textDetailContainer'>
         <div className="row" >
-        <div className="col">
-            <img className="fotoDetalle" src={producto.foto} alt='img' />
+            <div className="col">
+                <img className="photoDetail w-50 rounded" src={producto.photo} alt='img' />
+            </div>
+            <div className="col">
+            <h2>{producto.category}</h2>
+            <h1>{producto.name}</h1>
+            <p>{producto.price}</p>
+            <p className='photoDescription'>{producto.description}</p>
+            <br/>
+            {isItemCount ?
+            <ItemCount stock = {5} inicial = {1} onAdd={onAdd}  />
+            :
+            <InputCount/>
+            }
+            </div>    
         </div>
-        <div className="col">
-        <h2>{producto.categoria}</h2>
-        <h1>{producto.name}</h1>
-        <p>{producto.price}</p>
-        <p className='fotoDescripcion'>{producto.descripcion}</p>
-        <br/>
-        {isItemCount ?
-        <ItemCount stock = {5} inicial = {1} onAdd={onAdd}  />
-        :
-        <InterButton/>
-        }
-        </div>    
     </div>
-
     )
 }
 

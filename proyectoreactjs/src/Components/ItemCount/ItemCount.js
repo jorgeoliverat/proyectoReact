@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import InterButton from "../InterButton/InterButton";
 import '../styles/ItemCount.css'
 
 export const ItemCount = ({stock, inicial, onAdd}) => {
@@ -22,13 +21,12 @@ export const ItemCount = ({stock, inicial, onAdd}) => {
             <div>
 
                 {cuantity} <br/>
-                <button type="button" className="btn btn-primary" onClick={resta}>-</button>
-                <button type="button" className="btn btn-primary" onClick={suma}>+</button>
+                <button type="button" className="btn btn-success" onClick={resta}>-</button>
+                <button type="button" className="btn btn-success" onClick={suma}>+</button>
                 <br/>
-                <button type="submit" className="btn btn-primary" onClick={() => onAdd(cuantity)}>
+                <button type="submit" className="btn btn-success" onClick={() => onAdd(cuantity)}>
                     AGREGAR AL CARRITO
-                </button>
-                <InterButton/>            
+                </button>            
             </div>
     );
 }

@@ -5,21 +5,21 @@ import Container from 'react-bootstrap/Container'
 // import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
-import '../styles/NavBar.css'
+import '../NavBar/NavBar.css'
 
 
 const NavBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-        <Link to = "/">
+        <Link className="linkStyle" to = "/">
             <Navbar.Brand href="#home">KUNA STORE</Navbar.Brand>
         </Link>    
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-            <Link className="categoriaEstilo" to='/categoria/Zapatilla'>Zapatillas</Link>
-            <Link className="categoriaEstilo" to='/categoria/Polo'>Polos</Link>
-            <Link className="categoriaEstilo" to='/categoria/Polera'>Poleras</Link>
+            <Link className="linkStyle" to='/categoria/Zapatilla'>Zapatillas</Link>
+            <Link className="linkStyle" to='/categoria/Polo'>Polos</Link>
+            <Link className="linkStyle" to='/categoria/Polera'>Poleras</Link>
         </Navbar.Collapse>
         </Container>
         <CartWidget/>

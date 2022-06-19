@@ -2,12 +2,12 @@ import {addDoc, collection, getFirestore} from "firebase/firestore"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext"
 import CartItem from "../CartItem/CartItem";
+import "../Cart/Cart.css"
 
 const Cart = () => {
 
     const {cartList, clearCart, totalPrice, totalItems} = useCartContext ()
     
-    function generarOrden() {
     let orden = {}     
         
         orden.buyer = { name: 'Jorge', email: 'j@gmail.com', phone: '957849073' }
@@ -30,33 +30,39 @@ const Cart = () => {
         .finally (() => clearCart) 
 
 
-    }
     if (!totalItems) {
         return (
             <div className="container mt-5">
                 <label className="alert alert-success">EL PEDIDO ESTÁ VACIO</label><br />
                 <Link to='/'>
-                    <button className='btn btn-outline-primary'>Volver al menú</button>
+                    <button className='btn btn-outline-success'>Volver al menú</button>
                 </Link>
             </div>
         );
     }
 
     return (
-        <div>
+        <div className="textColor">
             <h1>Su pedido:</h1>
             {cartList.map(el => <CartItem key={el.id} item={el}/>)}
             
             <h2>{`COSTO TOTAL: S/ ${totalPrice}`}</h2>
-            <button className='btn btn-outline-primary' onClick={clearCart}>Vaciar carrito</button>
-            <button className='btn btn-outline-primary' onClick={generarOrden}>Realizar compra</button>
-
+            <br/>
+            <Link to='/checkout'>
+            <button className='btn btn-outline-success'>Ir al checkout</button>
+            </Link>
+            <br/>
+            <br/>
+            <button className='btn btn-outline-success' onClick={clearCart}>Vaciar carrito</button>
         </div>
 
     )
     }
     
     export default Cart
+
+    
+
 
     
 

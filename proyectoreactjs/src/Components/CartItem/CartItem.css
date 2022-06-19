@@ -5,11 +5,15 @@ li {
 }
 
 
-.fotoCartItem {
+.photoCartItem {
     border-radius: 50%;
     margin-right: 20px;
 }
 
 .itemBag {
     margin-left: 20px;
+}
+
+.bagCursor {
+    cursor: pointer;
 }

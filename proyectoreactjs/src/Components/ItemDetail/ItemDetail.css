@@ -1,0 +1,15 @@
+.photoDetail {
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 30px;
+}
+
+.photoDescription {
+    text-align:justify;
+    margin: 0 50px 0 50px;
+}
+
+.textDetailContainer {
+    color: white;
+    padding-top:5rem;
+}
