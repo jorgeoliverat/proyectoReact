@@ -2,6 +2,7 @@ import React from "react"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getFirestore, collection, getDocs, where, query} from 'firebase/firestore'
+
 import ItemList from "../ItemList/ItemList"
 
     const ItemListContainer = () => {
@@ -10,7 +11,7 @@ import ItemList from "../ItemList/ItemList"
     const [loading, setLoading] = useState(true)
     const { id } = useParams()      
     
-
+//filtrado por categoria
     useEffect(() => {
         const db = getFirestore()
             const queryCollection = collection(db, 'items')
@@ -24,11 +25,9 @@ import ItemList from "../ItemList/ItemList"
         return (
             <div>
                 { loading ? 
-                    <div className="spinner-border text-secondary mt-5" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                    </div>  
+                    <div className="spinner-border text-secondary mt-5" role="status"></div>  
                     : 
-                    <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}} >
+                    <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap',}} >
                         <ItemList productos={productos} />
                     </div>                  
                 }

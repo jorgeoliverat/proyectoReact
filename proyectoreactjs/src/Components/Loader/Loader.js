@@ -1,17 +1,5 @@
-import "../Loader/Loader.css";
 export default function Loader() {
     return (  
-        <div className="sipnnerPosition">
-            <div className="spinner">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>  
+        <div className="spinner-border text-secondary mt-5" role="status"></div>  
     );
 }

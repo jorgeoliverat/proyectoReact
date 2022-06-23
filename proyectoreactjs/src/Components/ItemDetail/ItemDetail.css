@@ -13,3 +13,18 @@
     color: white;
     padding-top:5rem;
 }
+
+
+@media (max-width: 768px) {
+    .textDetailContainer {
+        color: white;
+        margin-bottom:3rem;
+    }
+    
+    .photoDetail {
+        min-width: 300px;
+        min-height: 300px;
+        margin-top: -20px;
+        margin-bottom: 1rem;
+    }
+}

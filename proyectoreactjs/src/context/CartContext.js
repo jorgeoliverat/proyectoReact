@@ -56,9 +56,18 @@ const CartContextProvider = ({children}) =>{
         let date = new Date();
         let orderDate = date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() 
         let order = {}
-        let orderid = Math.random();
+        let orderid = Math.round(Math.random()*20);
         
         order.buyer = customer;
+        order.name = order.buyer.name
+        order.price = totalPrice
+        
+        order.items = cartList.map(cartItem => {
+            const id = cartItem.id
+            const nombre = cartItem.name
+            const price = cartItem.price * cartItem.cant
+            return {id, nombre, price}   
+        })  
         order.date = orderDate;
         order.randomid = orderid;
 

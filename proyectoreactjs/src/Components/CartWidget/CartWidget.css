@@ -1,18 +1,18 @@
 .logoNavBar {
-    /* background-color: aqua; */
     margin-right: 30px;
+    size: 30px;
 }
 
 .cartWidget {
     display: flex;
-    position: relative;
+    position:relative;
 }
 
 .cartWidget__counter {
     color: white;
     background-color: rgb(126, 194, 129);
     padding: 0rem 0.5rem 0rem 0.4rem;
-    margin-right: 5rem;
+    margin-right: 0rem;
     border-radius: 15%;
     position: absolute;
     line-height: 2rem;
@@ -30,3 +30,16 @@
         font-size: 1.5rem;
     }
 }
+
+@media (max-width: 799px) {
+    .logoNavBar {
+        font-size: 1.5rem;
+        margin-right: 20px;
+    }
+    .cartWidget__counter {
+        font-size: 1rem;
+        padding: 0rem 0.3rem 0rem 0.2rem;
+        line-height: 1.3rem;
+    }
+}
+

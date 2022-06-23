@@ -1,8 +1,9 @@
 import { collection, getDocs, getFirestore} from "firebase/firestore";
-import { useCartContext } from "../../context/CartContext.js";
 import { useEffect, useState } from "react";
+
 import Loader from "../Loader/Loader";
 import ItemShowOrder from "../ItemShowOrder/ItemShowOrder";
+import { useCartContext } from "../../context/CartContext.js";
 
 export default function ShowOrder() {
     const {orderReady} = useCartContext();
@@ -20,8 +21,6 @@ export default function ShowOrder() {
             .finally(setTimeout(() =>  setStatus(true),1000));
     },[orderReady])
     return (
-        <div>
-            { orderStatus ? <ItemShowOrder order={order}/> : <Loader />}
-        </div>
+        <div>{ orderStatus ? <ItemShowOrder order={order}/> : <Loader />}</div>
     );
 }

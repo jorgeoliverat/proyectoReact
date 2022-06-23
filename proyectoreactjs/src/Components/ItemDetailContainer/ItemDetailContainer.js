@@ -1,9 +1,8 @@
 import {doc, getDoc, getFirestore} from "firebase/firestore"
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
+
 import ItemDetail from '../ItemDetail/ItemDetail'
-
-
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState ({})
@@ -23,9 +22,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             { loading ? 
-                    <div className="spinner-border mt-5" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                    </div> 
+                    <div className="spinner-border text-secondary mt-5" role="status"></div> 
                     :     
                     <ItemDetail producto = {producto} />  
                 }        

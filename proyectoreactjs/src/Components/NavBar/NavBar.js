@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Navbar from 'react-bootstrap/Navbar' 
-import Container from 'react-bootstrap/Container'
-// import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../CartWidget/CartWidget'
-import { Link } from 'react-router-dom'
+
+import Container from 'react-bootstrap/Container'
 import '../NavBar/NavBar.css'
 
-
+//NavBar linkeado con react router dom para filtrar por categoria.
+//Se agregó componente CartWidget para mostrar icono de carrito.
 const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -22,7 +23,7 @@ const NavBar = () => {
             <Link className="linkStyle" to='/categoria/Polera'>Poleras</Link>
         </Navbar.Collapse>
         </Container>
-        <CartWidget/>
+        <div className='CartPosition'><CartWidget/></div>
         </Navbar>
     )
 }
