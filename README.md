@@ -20,10 +20,10 @@ Posteriormente, se montó el CartWidget dentro del component NavBar.
 
 Un poco de la distribución para este proyecto que es relativamente pequeño:
 
-*|--src/
-*|--|--components/
-*|--|--context/
-*|--|--firebase/
+* |--src/
+* |--|--components/
+* |--|--context/
+* |--|--firebase/
 
 
 ### Librerías y lenguajes usados
