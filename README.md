@@ -36,4 +36,4 @@ Un poco de la distribución para este proyecto que es relativamente pequeño:
 * CSS3 // Lenguaje de diseño gráfico para definir y crear el estilo del e-commerce.
 
 ### Deploy
-El deploy del sitio fue realizado en Netlify, se encuentra en este link => 
+El deploy del sitio fue realizado en Netlify, se encuentra en este link => https://willowy-youtiao-57f225.netlify.app
